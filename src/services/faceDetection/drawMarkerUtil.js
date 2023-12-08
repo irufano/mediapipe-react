@@ -10,7 +10,7 @@
  * @param boxColor color of border box detection
  * @param boxWidth lineWidth of border box detection
  */
-const drawFaceIndicator = (
+const drawFaceMarker = (
   faces,
   input,
   ctx,

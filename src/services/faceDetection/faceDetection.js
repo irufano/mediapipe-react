@@ -2,7 +2,7 @@ import {
   FaceDetector,
   FilesetResolver,
 } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8";
-import drawFaceIndicator from "./drawIndicatorUtil";
+import drawFaceIndicator from "./drawMarkerUtil";
 
 let instance;
 
@@ -118,7 +118,7 @@ class FaceDetection {
       onMultiFaceDetected(faces.length > 1);
 
       requestAnimationFrame(() =>
-        drawFaceIndicator(faces, video, ctx, { withScore: true })
+        drawFaceMarker(faces, video, ctx, { withScore: true })
       );
     } catch (error) {
       const err = `Error @detectVideo: ${error}`;
@@ -142,7 +142,7 @@ class FaceDetection {
       const startTimeMs = performance.now();
       const faces = this.detector.detectForVideo(image, startTimeMs).detections;
 
-      drawFaceIndicator(faces, image, ctx, {
+      drawFaceMarker(faces, image, ctx, {
         withScore: true,
         withClear: false,
       });
