@@ -88,4 +88,4 @@ const drawFaceMarker = (
   });
 };
 
-export default drawFaceIndicator;
+export default drawFaceMarker;
